@@ -1,2 +1,1 @@
-# http2-rapid-client
-http2-rapid-client for stress testing only.
+Rapid Reset Client is a tool for testing mitigations and exposure to CVE-2023-44487 (Rapid Reset DDoS attack vector). It implements a minimal HTTP/2 client that opens a single TCP socket, negotiates TLS, ignores the certificate, and exchanges SETTINGS frames. The client then sends rapid HEADERS frames followed by RST_STREAM frames. It monitors for (but does not handle) server frames after initial setup, other than to send to stdout. This functionality is easily removed from source if it's too annoying.
